@@ -1,0 +1,48 @@
+/* Professional Back Button System */
+.back-nav-container {
+    padding: 20px 0 10px;
+}
+
+.btn-back-professional {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+.btn-back-professional:hover {
+    background-color: #fcfcfc;
+    border-color: #111;
+    color: #000;
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-back-professional i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    transition: transform 0.25s ease;
+}
+
+.btn-back-professional:hover i {
+    transform: translateX(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .back-nav-container {
+        padding: 15px 10px 5px;
+    }
+    .btn-back-professional {
+        padding: 6px 14px;
+        font-size: 0.85rem;
+    }
+}

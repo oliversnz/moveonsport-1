@@ -1,0 +1,250 @@
+.about-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #0b3d2e; /* Fallback */
+    background-image: url('../images/home/imagen1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 120px 20px;
+    overflow: hidden;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(11, 61, 46, 0.95) 0%, 
+        rgba(15, 32, 39, 0.85) 50%, 
+        rgba(11, 61, 46, 0.9) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.hero-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(76, 175, 80, 0.1), transparent);
+    transform: rotate(-45deg);
+    border-radius: 50px;
+}
+
+.shape-1 {
+    width: 600px;
+    height: 100px;
+    top: -100px;
+    left: -200px;
+    animation: shapeFloat 20s infinite linear;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 80px;
+    bottom: -50px;
+    right: -100px;
+    animation: shapeFloat 15s infinite linear reverse;
+}
+
+@keyframes shapeFloat {
+    0% { transform: rotate(-45deg) translateX(0); }
+    50% { transform: rotate(-45deg) translateX(50px); }
+    100% { transform: rotate(-45deg) translateX(0); }
+}
+
+.about-text {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+}
+
+.about-hero h1 {
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #4CAF50, #81C784, #4CAF50);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.about-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Animaciones */
+.animate-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.animate-up-delay {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo Mejorado */
+@media(max-width:900px){
+    .about-hero {
+        min-height: 60vh;
+        padding: 100px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 52px;
+    }
+
+    .about-hero p {
+        font-size: 18px;
+    }
+}
+
+@media(max-width:600px){
+    .about-hero h1 {
+        font-size: 42px;
+    }
+}
+
+/* Historia */
+.about-story{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    padding:100px 10%;
+    align-items:center;
+}
+
+.story-img img{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.story-text h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.story-text p{
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+/* Valores */
+.about-values{
+    padding:100px 10%;
+    background:#f7f7f7;
+    text-align:center;
+}
+
+.about-values h2{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.values-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.value-card{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.value-card:hover{
+    transform:translateY(-10px);
+}
+
+.value-card h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+/* Visión */
+.about-vision{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    padding:100px 10%;
+    align-items:center;
+}
+
+.vision-img img{
+    width:70%;
+    border-radius:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.vision-text h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.vision-text p{
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .about-story,
+    .about-vision{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .about-hero h1{
+        font-size:42px;
+    }
+}
